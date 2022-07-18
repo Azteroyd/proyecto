@@ -1,0 +1,271 @@
+body {
+  background: rgb(222,240,255); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(222,240,255,1) 71%, rgba(222,240,255,1) 99%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(71%,rgba(222,240,255,1)), color-stop(99%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(222,240,255,1) 71%,rgba(222,240,255,1) 99%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(222,240,255,1) 71%,rgba(222,240,255,1) 99%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(222,240,255,1) 71%,rgba(222,240,255,1) 99%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(222,240,255,1) 71%,rgba(222,240,255,1) 99%); /* W3C */
+
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+  color: #000;
+  font-family: "Century Gothic";
+  font-size: 16px;
+  line-height: 1.6;
+
+  font-family: Verdana,sans-serif;
+  margin:0;
+}
+
+form {
+  border: none;
+  padding-top: 10px;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+input[type=text], input[type=password], input[type=date]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=search] {
+    width: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+button {
+    background-color: #AF7AC5;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+.container {
+    padding: 1rem;
+    top: 10px;
+}
+
+.icon-bar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+}
+
+.active {
+    background-color: #4CAF50 !important;
+}
+
+
+
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: auto;
+  position: absolute;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #AF7AC5;
+    color: black;
+}
+
+.boto{
+  position: relative;
+  display: flex;
+  text-align: center;
+  text-decoration: none;
+  margin: 3px;
+  border: 0.9px solid black;
+  background-color: #F6DDCC;
+  border-radius: 3px;
+  align-items: center;
+  font-size: 11px;
+  font-family: Arial;
+}
+
+header {
+    background-color: #BDC3C7;
+    height: 75  px;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    height: auto;
+    width: auto;
+    max-height: 70px;
+    max-width: 200px;               
+}
+
+.img1{
+    position: absolute;
+    left:1250px;
+    bottom: 1px;
+}
+.img2{
+    position: absolute;
+    left:10px;
+    bottom: 1px;
+}
+.img3{
+    position: absolute;
+    left:1000px;
+    bottom: 1px;
+}
+.contenido{
+    display: flex;
+}
+
+.contenedor{
+border: 10px solid black;
+height: 100px;
+width: 100px;
+}
