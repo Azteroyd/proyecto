@@ -18,6 +18,7 @@ function buscar_datos(){
       beforeSend: function() 
       {alert("enviando");}, 
       
+      
       error: function()
       {alert("Error");},
       
@@ -43,23 +44,53 @@ function buscar_datos(){
     }) 
   }
 
+
+ /* ---> Ignore
+  function readMethodPost(URL, param, element){
+     param = $(this).val();
+    $.post(URL, {param:param}, function(data){
+        $(element).html(data);
+    });
+  }
+    --> Ignore
+  */ 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-			$(document).ready(function(){
-				$("#nom_cord").change(function () {
+$(document).ready(function(){
+  $("#nom_cord").change(function () {
 
-					$('#nom_umed').find('option').remove().end().
-					append('<option value="whatever"></option>').val('whatever');
-					
-					$("#nom_cord option:selected").each(function () {
-						id_cord = $(this).val();
-						$.post("Metodos/ob_unidades.php", { id_cord: 
-							id_cord }, function(data){
-							$("#nom_umed").html(data);
-						});            
-					});
-				})
-			});
+   /*
+    $('#nom_umed').find('option').remove().end().
+    append('<option value="whatever"></option>').val('whatever');
+  */
+
+    $("#nom_cord option:selected").each(function () {
+        
+      //readMethodPost("Metodos/ob_unidades.php", id_cord, "#nom_umed");
+      record = $(this).val();
+      $.post("Metodos/ob_unidades.php", { record: 
+        record }, function(data){
+        $("#nom_umed").html(data);
+        
+      });
+      
+    });
+
+    $("#nom_umed").change(function(){
+        $("#nom_umed option:selected").each(function (){
+          id = $(this).val();
+          $("#coden").val(id);
+        })
+       
+    })
+  })
+
+ 
+});
+
+$(document).ready(function(){
+  $('#')
+});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

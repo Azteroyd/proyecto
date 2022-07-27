@@ -7,9 +7,9 @@
 </head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="./CSS/formula.css">
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/funciones.js"> </script>
 <body>
 	<header class="header">
@@ -77,8 +77,12 @@
 						<div class="caja">
 							<select name="nom_umed" id="nom_umed" style="width: 600px; height: 25px;"></select>
       					</div>
+						
+						<div class="caja">
+						  	<input type="text" class = "form-input" placeholder = "Código" name = "" id = "coden"></input>
+						  <!-- <p id = "coden"></p> -->
+      					</div>
 
-      					
 				</div>
 </center>
 
