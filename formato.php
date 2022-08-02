@@ -58,11 +58,12 @@
 	$resultado = mysqli_query($con,$query);
 ?>
       					<select name="nom_cord" id="nom_cord" style="width: 550px; height: 25px;">
-      						<option value="0">Seleccionar Coordinación</option>
+      						<option disabled selected>Seleccionar Coordinación</option>
 <?php while ($row = $resultado->fetch_assoc()) { ?>
 	<option value="<?php echo $row ['id_cord']; ?>"> <?php echo $row['nom_cord']; ?></option>
 <?php } ?>
 </select>
+	<input type = "text" id = "nombreCor" name = "NombreCor" class = "AuxNomCor" style = "display: none;"></input>
 </div>
 <!---------------------------------------------------------------------->
 
@@ -74,14 +75,17 @@
 				<div>
 <!--Titulo -->		<div class="titulo"><b> <font size="3"><font size="0.7">5/</font> CODIGO Y NOMBRE COMPLETO DE LA UNIDAD MEDICA O ADMINISTRATIVA</font></b></div>
 
+						
+						<div class = "caja">
+							<input type="text" name = "auxcoden" id = "coden"></input>
+						</div>
+						
 						<div class="caja">
 							<select name="nom_umed" id="nom_umed" style="width: 600px; height: 25px;"></select>
       					</div>
 						
-						<div class="caja">
-						  	<input type="text" class = "form-input" placeholder = "Código" name = "" id = "coden"></input>
-						  <!-- <p id = "coden"></p> -->
-      					</div>
+						<input type = "text" name = "auxNU" id = "AuxNUnidad" style = "display: none;"></input>
+						
 
 				</div>
 </center>
@@ -153,7 +157,7 @@
       						<input type="number" name="clave_ise" class="form-input" id="clave_ise" />
       				</div>
 <br>
-					<div class="caja" style="display: none;">
+					<div class="caja" >
       						<label for="genero">Genero </label>
       						<input type="text" name="gen" id="gen" class="form-input" required/>
 					</div>
@@ -169,6 +173,9 @@
 
 <!---------------------------------------------------------------------->
 <div class="caja">
+		<input type = "text" name = "othertest" id = "otherTest" style = "display: none;"></input>
+	</div>
+<div class="caja">
 	<?php
 	
 	$query = "SELECT id_ClasPuesto, clasificacion FROM tbl_claspuesto ORDER BY clasificacion ASC";
@@ -177,25 +184,25 @@
 <label for="clasi"><font size="0.7">20/</font> Clasificación </label>
 
 <select name="clasificacion" id="clasificacion" style="width: 200px; height: 25px;">
-<option value="0">Seleccionar la Clasificación</option>
+<option selected disabled>Seleccionar la Clasificación</option>
 
 <?php while ($row = $resultado->fetch_assoc()) { ?>
 	<option value="<?php echo $row ['id_ClasPuesto']; ?>"> <?php echo $row['clasificacion']; ?></option>
 <?php } ?>
-</select>
-      					
+</select>			
 </div>
+	
 <!---------------------------------------------------------------------->
 
 <div class="caja">
 <label for="clasi"><font size="0.7">15/</font> Nombre del Puesto </label>
 	<select name="nom_puesto" id="nom_puesto" style="width: 330px; height: 25px;"></select>
 </div>
-
+	<input type = "text" id = "NombrePuestoAux" name = "nombrePuestoAux" style = "display: none;"></input>
 <br>      					 
 <div class="caja">
 							<label for="clasi"><font size="0.7">16/</font> Nivel </label>
-      						<input style="width: 50px; height: 25px;" type="int" name="" class="form-input" id="nivel" required />
+      						<input style="width: 50px; height: 25px;" type="int" id = "nivelPuestoAux" name="nivelPuestoAux" class="form-input" id="nivel" required/>
 </div>
 
 
