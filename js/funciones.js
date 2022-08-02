@@ -1,3 +1,15 @@
+
+valuesInElement = (element, info) => {
+    $(element).html(info);
+}
+interPostMethod =  (URL, param, element) => {
+
+  $.post(URL, {param:param}, (data) => {
+     console.log($(element).html(data));
+  });
+
+}
+
 function buscar_datos(){
 
     doc = $("#doc").val();
@@ -45,15 +57,6 @@ function buscar_datos(){
   }
 
 
- /* ---> Ignore
-  function readMethodPost(URL, param, element){
-     param = $(this).val();
-    $.post(URL, {param:param}, function(data){
-        $(element).html(data);
-    });
-  }
-    --> Ignore
-  */ 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function(){
@@ -63,33 +66,36 @@ $(document).ready(function(){
     $('#nom_umed').find('option').remove().end().
     append('<option value="whatever"></option>').val('whatever');
   */
-
+   
     $("#nom_cord option:selected").each(function () {
-        
-      //readMethodPost("Metodos/ob_unidades.php", id_cord, "#nom_umed");
-      record = $(this).val();
+      record = $(this).val(); 
+      ubicacion = $(this).text();
+      auxUbi = $("#nombreCor").val(ubicacion);
+      console.log(record, auxUbi);
+      //interPostMethod("Metodos/ob_unidades.php", record,"#nom_umed");
       $.post("Metodos/ob_unidades.php", { record: 
         record }, function(data){
-        $("#nom_umed").html(data);
-        
+       console.log($("#nom_umed").html(data));
       });
-      
     });
 
-    $("#nom_umed").change(function(){
-        $("#nom_umed option:selected").each(function (){
-          id = $(this).val();
-          $("#coden").val(id);
-        })
-       
-    })
   })
 
- 
 });
 
 $(document).ready(function(){
-  $('#')
+  $("#nom_umed").change(function(){
+    $("#nom_umed option:selected").each(function (){
+      id = $(this).val();
+      nombreUnidad = $(this).text();
+      AuxNombreUnidad = $("#AuxNUnidad").val(nombreUnidad);
+      $("#coden").val(id);
+      console.log(nombreUnidad, nombreUnidad, AuxNombreUnidad);
+  
+    })
+   
+  })
+  
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -102,13 +108,33 @@ $(document).ready(function(){
 					
 					$("#clasificacion option:selected").each(function () {
 						id_ClasPuesto = $(this).val();
-						$.post("Metodos/ob_puestos.php", { id_ClasPuesto: 
-							id_ClasPuesto }, function(data){
+            test = $(this).text();
+            newValueTest = $("#otherTest").val(test);
+            console.log(id_ClasPuesto, test);
+						$.post("Metodos/ob_puestos.php", { 
+              id_ClasPuesto: id_ClasPuesto 
+            }, function(data){
 							$("#nom_puesto").html(data);
-						});            
+
+						}); 
+
 					});
 				})
+      
 			});
+
+  $(document).ready(function() {
+    $("#nom_puesto").change( function (){
+      $("#nom_puesto option:selected").each(function () {
+        auxNivel = $(this).val();
+       auxNom = $(this).text();
+        nombre_Puesto = $("#NombrePuestoAux").val(auxNom);
+        nivel_Puesto = $("#nivelPuestoAux").val(auxNivel);
+        console.log(auxNivel, auxNom);
+      });
+});
+  });
+      
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
